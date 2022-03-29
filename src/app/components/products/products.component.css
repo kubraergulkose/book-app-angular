@@ -1,0 +1,59 @@
+.row {
+
+  text-align: center;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+
+.container{
+  margin: auto;
+
+}
+
+.card {
+  padding: 20px;
+  margin: 30px;
+
+}
+
+
+.card img{
+
+  object-fit: scale-down;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+
+}
+.card img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale (1.1);
+}
+
+.card-title {
+  text-decoration: underline;
+  font-family: Century Gothic;
+  font-style: unset;
+  color: rgb(42, 1, 46);
+}
+
+.card-text{
+  font-family: Century Gothic;
+
+}
+
+.btn-download{
+  margin-top: 10px;
+}
+
+.warning_text {
+  justify-content: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: brown;
+  margin-top: 10% ;
+
+}
+

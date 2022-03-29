@@ -1,0 +1,52 @@
+<div class="modal-header">
+  <h5 class="modal-title text-danger" id="loginModalLabel">Register Form</h5>
+
+</div>
+<div class="modal-body">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': registered && f_register.email.errors }"  id="inputEmail4">
+      <div *ngIf="registered && f_register.email.errors" class="invalid-feedback">
+        <div *ngIf="f_register.email.errors.required">Email is required</div>
+        <div *ngIf="f_register.email.errors.email">Email must be a valid email address</div>
+     </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': registered && f_register.password.errors }" id="inputPassword4">
+      <div *ngIf="registered && f_register.password.errors" class="invalid-feedback">
+        <div *ngIf="f_register.password.errors.required">Password is required</div>
+     </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword2" class="form-label">Password Reply</label>
+      <input type="password" formControlName="password2" class="form-control" [ngClass]="{ 'is-invalid': registered && f_register.password2.errors}" id="inputPassword5">
+      <div *ngIf="registered && f_register.password2.errors " class="invalid-feedback">
+        <div *ngIf="f_register.password2.errors.required">Password Reply is required</div>
+     </div>
+     <div *ngIf="registered && f_register.password2.errors " class="invalid-feedback">
+      <div *ngIf="f_register.password2.errors.mustMatch">Password and Reply not match</div>
+   </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender</label>
+
+      <div class="form-check form-switch">
+
+        <input type="checkbox" formControlName="gender" class="form-check-input"
+        type="checkbox"       id="gender"  value="false">
+        <label class="form-check-label" for="flexSwitchCheckDefault"> Male?</label>
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <button  type="button" routerLink="/login" class="btn btn-warning" data-bs-dismiss="modal">Login</button>
+</div>

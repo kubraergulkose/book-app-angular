@@ -1,0 +1,26 @@
+<div class="text-center">
+  <h1 *ngIf="!isLoginSuccess"  class="warning_text">You should register or login!</h1>
+</div>
+<div class="row" *ngIf="isLoginSuccess">
+  <ng-container *ngFor="let item of productList | filter: searchKey : 'title' ">
+    <div class="card col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src= "{{item.formats['image/jpeg']}}"  alt=" ">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <div>
+            <h5 class="card-text-bold" >Authors:</h5 >
+            <h5 class="card-text" *ngFor="let aut of item.authors">{{aut.name}}</h5 >
+              <h5 class="card-text-bold" >Languages:</h5 >
+            <h5 class="card-text">{{item.languages}}</h5 >
+              <h5 class="card-text-bold" >Download Count:</h5 >
+            <h5 class="card-text">{{item.download_count}}</h5 >
+          </div>
+
+          <a href="{{item.formats['application/zip']}}"  class="btn-download btn btn-success">Download Link</a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
